@@ -1,0 +1,56 @@
+# --- Python 規律 ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- 仮想環境 (venv) ---
+# 秘密結社のプライベート空間
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# --- 環境変数 / 秘密情報 ---
+# 琥珀色の秘密はここから漏らさない
+.env
+.venv
+*.env
+*.secrets
+
+# --- データベース (Local) ---
+# SQLiteなど、ローカルでの実験跡
+*.db
+*.sqlite3
+
+# --- エディタ / IDE (VS Code 等) ---
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# --- OS / システム ---
+.DS_Store
+Thumbs.db

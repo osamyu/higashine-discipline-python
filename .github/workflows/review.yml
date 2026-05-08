@@ -1,0 +1,26 @@
+name: H3S AI Review
+on:
+  pull_request:
+    types: [opened, synchronize]
+  workflow_dispatch:
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: H3S Agent Reviewer
+        uses: osamyu/H3S-agent-reviewer@main
+        with:
+          # 基本設定
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REVIEW_LEVEL: 'intermediate' # beginner(初級) / intermediate(中級) / advanced(上級)
+          MODEL_NAME: 'gemini-2.5-flash'
+          FORCE_REQUEST_CHANGES: 'false'
+        env:
+          # ライセンスキー (Secret経由で設定してください)
+          H3S_AGENT_KEY: ${{ secrets.H3S_AGENT_KEY }}
